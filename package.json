@@ -1,0 +1,42 @@
+{
+  "name": "fastify-practice",
+  "version": "0.0.1",
+  "description": "Practicing Fastify",
+  "main": "src",
+  "scripts": {
+    "dev": "nodemon --ext '*' --watch src --exec 'ts-node src/index.ts' --delay 2",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "lint:fix": "eslint '**/*.{ts,tsx}' --ext .ts --fix",
+    "prettier": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --check",
+    "prettier:fix": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/litsynp/fasity-practice.git"
+  },
+  "keywords": [
+    "fastify"
+  ],
+  "author": "litsynp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/litsynp/fasity-practice/issues"
+  },
+  "homepage": "https://github.com/litsynp/fasity-practice#readme",
+  "dependencies": {
+    "fastify": "^4.10.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
