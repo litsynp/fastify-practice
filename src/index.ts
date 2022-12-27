@@ -1,4 +1,5 @@
 import { Server, IncomingMessage, ServerResponse } from 'http'
+
 import Fastify, { FastifyInstance } from 'fastify'
 
 const server: FastifyInstance<Server, IncomingMessage, ServerResponse> =

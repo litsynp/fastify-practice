@@ -5,10 +5,12 @@
   "main": "src",
   "scripts": {
     "dev": "nodemon --ext '*' --watch src --exec 'ts-node src/index.ts' --delay 2",
-    "lint": "eslint '**/*.{ts,tsx}'",
-    "lint:fix": "eslint '**/*.{ts,tsx}' --ext .ts --fix",
-    "prettier": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --check",
-    "prettier:fix": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --write",
+    "lint:es": "eslint '**/*.{ts,tsx}'",
+    "lint:es:fix": "eslint '**/*.{ts,tsx}' --ext .ts --fix",
+    "lint:etc": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --check",
+    "lint:etc:fix": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --write",
+    "lint": "npm run lint:es && npm run lint:etc",
+    "lint:fix": "npm run lint:es:fix && npm run lint:etc:fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +35,7 @@
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "nodemon": "^2.0.20",
