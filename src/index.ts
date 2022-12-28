@@ -1,21 +1,16 @@
-import { Server, IncomingMessage, ServerResponse } from 'http'
+import { createApp } from './app'
 
-import Fastify, { FastifyInstance } from 'fastify'
+const PORT = parseInt(process.env.PORT || '3000', 10)
 
-const server: FastifyInstance<Server, IncomingMessage, ServerResponse> =
-  Fastify({ logger: true })
+const startServer = async () => {
+  const server = createApp()
 
-server.get('/', async () => {
-  return { hello: 'world' }
-})
-
-const start = async () => {
   try {
-    await server.listen({ port: 3000 })
+    await server.listen({ port: PORT })
   } catch (err) {
     server.log.error(err)
     process.exit(1)
   }
 }
 
-start()
+startServer()
