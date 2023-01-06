@@ -1,12 +1,15 @@
 import { IncomingMessage, Server, ServerResponse } from 'http'
 
+import { TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
 import { fastify, FastifyInstance } from 'fastify'
+
+import * as todo from './todo'
 
 export function createApp() {
   const server: FastifyInstance<Server, IncomingMessage, ServerResponse> =
-    fastify({ logger: true })
+    fastify({ logger: true }).withTypeProvider<TypeBoxTypeProvider>()
 
-  server.register(routes)
+  server.register(routes).register(todo.externalRoutes, { prefix: '/todos' })
 
   return server
 }
